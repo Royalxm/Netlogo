@@ -25,7 +25,7 @@ end
 
 ;je cree des lapin et je mais random le qtite pour chaque lapin
 to cree-lapin
-  create-turtles 1
+  create-turtles 10
   ask turtles [
      setxy random-xcor random-ycor
       set qtite random 100
@@ -67,14 +67,14 @@ to lapin-move
        forward 1
         show   qtite
        set conversion qtite
-      ask neighbors [set odeurs (conversion / 2)] ;50%
+      ask neighbors [set odeurs ((conversion / 2 ) + odeurs)] ;50%
     ]
     [
       show "valeur max :"
       show   valuermax
       face target
       move-to target
-       ask neighbors [set odeurs (conversion / 2)] ;50%
+       ask neighbors [set odeurs ((conversion / 2 ) + odeurs)] ;50%
     ]
 
 
